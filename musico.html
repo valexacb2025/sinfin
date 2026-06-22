@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuela de Música Armonía Viva</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#6C63FF;
+    --secondary:#00C9A7;
+    --dark:#111827;
+    --light:#F9FAFB;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#333;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo{
+    color:#fff;
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:var(--secondary);
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:var(--secondary);
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--primary);
+}
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--dark);
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+.schedule{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    border-radius:25px;
+    padding:50px;
+    text-align:center;
+}
+
+.schedule h2{
+    margin-bottom:20px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+nav ul{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Armonía<span> Viva</span></div>
+
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#cursos">Cursos</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<div class="hero-content">
+<h1>Escuela de Música Armonía Viva</h1>
+<p>
+Formamos músicos desde los 3 años de edad hasta adultos mayores,
+desarrollando talento, sensibilidad artística y amor por la música.
+</p>
+
+<a href="#contacto" class="btn">Inscripciones Abiertas</a>
+</div>
+</section>
+
+<section id="nosotros">
+<div class="section-title">
+<h2>¿Quiénes Somos?</h2>
+</div>
+
+<div class="about reveal">
+
+<img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=1200&q=80">
+
+<div class="about-text">
+<h3>Educación Musical Integral</h3>
+
+<p>
+Nuestra escuela ofrece formación musical para niños, jóvenes,
+adultos y adultos mayores.
+</p>
+
+<br>
+
+<p>
+Contamos con programas especializados en instrumentos sinfónicos
+y andinos, promoviendo el desarrollo artístico, cultural y humano.
+</p>
+
+<br>
+
+<p>
+Las clases están diseñadas para desarrollar técnica, creatividad,
+disciplina y trabajo en equipo.
+</p>
+
+</div>
+</div>
+</section>
+
+<section id="cursos">
+
+<div class="section-title">
+<h2>Instrumentos que Enseñamos</h2>
+</div>
+
+<div class="cards">
+
+<div class="card reveal">
+<h3>🎻 Instrumentos Sinfónicos</h3>
+<p>
+Violín, Viola, Violonchelo, Contrabajo,
+Flauta, Clarinete, Trompeta, Trombón,
+Percusión y más.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>🪈 Instrumentos Andinos</h3>
+<p>
+Quena, Zampoña, Charango,
+Bombo Andino y otros instrumentos
+tradicionales de nuestra cultura.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>🎼 Iniciación Musical</h3>
+<p>
+Programa especial para niños desde los
+3 años de edad mediante juegos,
+ritmo y exploración musical.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>🎤 Formación Integral</h3>
+<p>
+Lectura musical, teoría,
+ensambles, práctica grupal
+y presentaciones artísticas.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="schedule reveal">
+<h2>Horarios de Atención</h2>
+
+<h3>Lunes a Viernes</h3>
+
+<br>
+
+<p><strong>Mañana:</strong> 08:00 - 12:00</p>
+<p><strong>Tarde:</strong> 15:00 - 18:00</p>
+
+<br>
+
+<p>
+Atendemos a estudiantes desde los 3 años
+hasta adultos mayores.
+</p>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<div class="section-title">
+<h2>Galería Musical</h2>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<div class="section-title">
+<h2>Contáctanos</h2>
+</div>
+
+<div class="contact reveal">
+
+<p>📍 Dirección: Tu ubicación aquí</p>
+
+<p>📞 Teléfono: +593 XXX XXX XXX</p>
+
+<p>📧 correo@escuelademusica.com</p>
+
+<p>🌐 Facebook | Instagram | WhatsApp</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Escuela de Música Armonía Viva</h3>
+
+<p>Inspirando generaciones a través de la música.</p>
+
+</footer>
+
+<script>
+
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll',()=>{
+
+reveals.forEach(el=>{
+
+const top = el.getBoundingClientRect().top;
+const visible = window.innerHeight - 100;
+
+if(top < visible){
+el.classList.add('active');
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
